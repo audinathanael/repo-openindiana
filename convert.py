@@ -3,7 +3,7 @@ import pandas as pd
 # Read the Excel file into a dataframe
 df = pd.read_excel("package_data.xlsx")
 
-df['Name'] = 'pkg://openindiana.org/' + df['Name']+"/"+df["Version"]
+df['Name'] = 'pkgrecv -s http://localhost:10000 -d /repo3 pkg://openindiana.org/' + df['Name']+"/"+df["Version"]
 
 df.drop("Version", axis=1, inplace=True)
 data= df.to_string(index=False,header=False)
