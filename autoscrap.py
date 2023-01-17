@@ -1,6 +1,6 @@
 import pandas as pd
 
-url = 'https://pkg.openindiana.org/dev/en/catalog.shtml?version=0.5.11%2C0.5.11-0.151.1.4&action=Browse'
+url = 'https://pkg.openindiana.org/dev/en/catalog.shtml?version=0.5.11%2C0.5.11-0.147&action=Browse'
 
 
 # Use pandas to read the HTML table
@@ -10,7 +10,7 @@ dfs = pd.read_html(url)
 df = dfs[0]
 
 # Filter the rows that have ':' in package version 
-df_filtered = df[["name","version"]]
+df_filtered = df[df['Version'].str.contains(':')]
 
 # Save the data into an excel file
-df_filtered.to_excel('package_data6.xlsx', index=False)
+df_filtered.to_excel('package_data10.xlsx', index=False)
