@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the Excel file into a dataframe
-df = pd.read_excel("package_data6.xlsx")
+df = pd.read_excel("package openindiana/package_data10.xlsx")
 
 
 
